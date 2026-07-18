@@ -1,4 +1,5 @@
 <script setup>
+const resumeUrl = import.meta.env.BASE_URL + 'resume.pdf'
 </script>
 
 <template>
@@ -11,7 +12,7 @@
         </p>
       </div>
       <div class="resume-action">
-        <a href="/resume.pdf" download="冠忠_簡歷.pdf" class="btn btn-primary btn-large">
+        <a :href="resumeUrl" download="冠忠_簡歷.pdf" class="btn btn-primary btn-large">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           下載 PDF 簡歷
         </a>

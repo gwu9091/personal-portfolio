@@ -7,7 +7,8 @@
       <div class="contact-info" v-slide-in="'left'">
         <h2 class="title">聯絡 <span class="text-gradient">我</span></h2>
         <p class="subtitle">
-          對我有興趣，或是單純想打個招呼嗎？歡迎隨時傳送訊息給我。
+          對我有興趣，或是單純想打個招呼嗎？歡迎透過表單或直接寄信到<br>
+          <a href="mailto:gwu9091@gmail.com" class="text-gradient" style="font-weight: 600; display: inline-block; margin-top: 0.5rem;">gwu9091@gmail.com</a>
         </p>
         
         <div class="social-links">
@@ -17,20 +18,22 @@
         </div>
       </div>
       
-      <form class="contact-form" @submit.prevent="" v-slide-in="'right'">
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" v-slide-in="'right'">
+        <input type="hidden" name="access_key" value="d2081c27-c3d9-4cac-afb7-a780f4ad3451">
+        
         <div class="form-group">
-          <label for="name">姓名</label>
-          <input type="text" id="name" placeholder="王小明" class="glass-input" />
+          <label for="name">姓名(公司名稱)</label>
+          <input type="text" id="name" name="姓名" placeholder="王小明" class="glass-input" required />
         </div>
         
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="wang@example.com" class="glass-input" />
+          <input type="email" id="email" name="信箱" placeholder="wang@example.com" class="glass-input" required />
         </div>
         
         <div class="form-group">
           <label for="message">訊息</label>
-          <textarea id="message" rows="4" placeholder="有什麼我可以幫忙的嗎？" class="glass-input"></textarea>
+          <textarea id="message" name="訊息" rows="4" placeholder="有什麼我可以幫忙的嗎？" class="glass-input" required></textarea>
         </div>
         
         <button type="submit" class="btn btn-primary submit-btn">傳送訊息</button>

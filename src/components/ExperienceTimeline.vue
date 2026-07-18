@@ -4,16 +4,23 @@ import { ref } from 'vue'
 const experiences = ref([
   {
     id: 1,
+    role: 'AI系 新生',
+    company: '亞洲大學',
+    date: '2022',
+    description: '運用 Laravel 與 Vue 3 等現代化框架進行系統開發，熟悉 GitHub 協作流程並積極參與 Pull Request 的技術討論，展現團隊協作能力。'
+  },
+  {
+    id: 2,
     role: '全端專案開發 (Digi-Pack / Asana-Learning)',
     company: '專案實作與團隊協作',
     date: '近期經歷',
     description: '運用 Laravel 與 Vue 3 等現代化框架進行系統開發，熟悉 GitHub 協作流程並積極參與 Pull Request 的技術討論，展現團隊協作能力。'
   },
   {
-    id: 2,
+    id: 3,
     role: 'AI系 應屆畢業生',
-    company: '國立大學 (或原學校)',
-    date: '2022 - 2026',
+    company: '亞洲大學',
+    date: '2026',
     description: '具備扎實的全端開發基礎，並積極導入進階 AI 代理工具（如 Antigravity、OpenClaw、Claude Code 等）作為開發輔助，熟悉如何與 AI 高效協作以加速開發迭代，展現擁抱新科技的熱忱。'
   }
 ])

@@ -4,11 +4,11 @@ import { ref } from 'vue'
 const projects = ref([
   {
     id: 1,
-    title: '電商後台管理系統',
-    description: '一個具備即時數據分析、深色模式與客製化元件的現代化後台儀表板。',
-    tags: ['Vue 3', 'Vite', 'Chart.js'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop',
-    link: '#'
+    title: '毛孩到府服務平台 (畢業專題)',
+    description: '專為寵物飼主打造的到府服務媒合平台。本專案由我「完全獨立」包辦全端架構、介面設計與資料庫建置，具備評價系統、線上商城與會員中心等完整功能，展現扎實的獨立開發實力。',
+    tags: ['獨立開發', '全端架構', '商城系統'],
+    image: './img/pet.png',
+    link: 'https://gwu9091.github.io/'
   },
   {
     id: 2,
