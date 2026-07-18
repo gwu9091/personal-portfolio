@@ -13,7 +13,7 @@
         
         <div class="social-links">
           <a href="https://github.com/gwu9091" target="_blank" class="social-icon">GitHub</a>
-          <a href="https://line.me/ti/p/~asana666" target="_blank" class="social-icon">LINE (ID: asana666)</a>
+          <a href="https://line.me/ti/p/~asana666" target="_blank" class="social-icon">LINE</a>
           <a href="https://www.facebook.com/wu.guan.zhong.2025" target="_blank" class="social-icon">Facebook</a>
         </div>
       </div>
