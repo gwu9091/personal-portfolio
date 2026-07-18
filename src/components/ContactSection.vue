@@ -12,9 +12,8 @@
         </p>
         
         <div class="social-links">
-          <a href="#" class="social-icon">GitHub</a>
-          <a href="#" class="social-icon">LinkedIn</a>
-          <a href="#" class="social-icon">Twitter</a>
+          <a href="https://github.com/gwu9091" target="_blank" class="social-icon">GitHub</a>
+          <a href="https://line.me/ti/p/~asana666" target="_blank" class="social-icon">LINE (ID: asana666)</a>
         </div>
       </div>
       
