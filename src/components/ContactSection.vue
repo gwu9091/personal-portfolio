@@ -20,6 +20,8 @@
       
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" v-slide-in="'right'">
         <input type="hidden" name="access_key" value="d2081c27-c3d9-4cac-afb7-a780f4ad3451">
+        <!-- 隱藏的 Honeypot 欄位，用來阻擋機器人發送垃圾信 -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
         
         <div class="form-group">
           <label for="name">姓名(公司名稱)</label>
