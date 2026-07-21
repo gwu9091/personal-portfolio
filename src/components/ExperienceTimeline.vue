@@ -11,10 +11,10 @@ const experiences = ref([
   },
   {
     id: 2,
-    role: '全端專案開發 (Digi-Pack / Asana-Learning)',
-    company: '專案實作與團隊協作',
+    role: '全端開發實習生',
+    company: '數位方塊 (Digi-Pack) - 台中',
     date: '近期經歷',
-    description: '運用 Laravel 與 Vue 3 等現代化框架進行系統開發，熟悉 GitHub 協作流程並積極參與 Pull Request 的技術討論，展現團隊協作能力。'
+    description: '於台中專注於網頁與系統開發的「數位方塊」擔任實習生，參與企業級專案實作。期間運用 Laravel 與 Vue 3 等現代化框架建置系統，並深入參與 GitHub 協作流程與 PR 技術討論，累積扎實的實務與團隊協作經驗。'
   },
   {
     id: 3,
