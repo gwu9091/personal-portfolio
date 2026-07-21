@@ -14,7 +14,7 @@ const experiences = ref([
     role: '全端開發實習生',
     company: '數位方塊 (Digi-Pack) - 台中',
     date: '近期經歷',
-    description: '於台中專注於網頁與系統開發的「數位方塊」擔任實習生，參與企業級專案實作。期間運用 Laravel 與 Vue 3 等現代化框架建置系統，並深入參與 GitHub 協作流程與 PR 技術討論，累積扎實的實務與團隊協作經驗。'
+    description: '於台中的「數位方塊」擔任實習生。期間透過內部實作專案進行練習，運用 Laravel 與 Vue 3 等現代化框架進行系統開發，並藉由實務演練熟悉 GitHub 協作流程與 PR 技術討論，為全端開發打下扎實基礎。'
   },
   {
     id: 3,
