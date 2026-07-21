@@ -5,6 +5,7 @@ const skills = ref([
   { name: 'Vue 3 / JavaScript', desc: '前端框架與動態互動', color: '#42b883' },
   { name: 'Laravel / 後端開發', desc: 'API 開發與資料庫架構', color: '#ff2d20' },
   { name: 'Bootstrap / RWD', desc: '響應式切版與 UI 設計', color: '#7952b3' },
+  { name: 'Tailwind CSS', desc: 'Utility-First 現代化樣式設計', color: '#38bdf8' },
   { name: 'AI 代理開發工具', desc: 'Antigravity, OpenClaw, Claude Code', color: '#4285f4' },
 ])
 </script>
