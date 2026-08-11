@@ -2,14 +2,12 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const stats = ref([
-  { label: '練習與實作', value: 5, prefix: '', suffix: '+' },
   { label: '掌握技術與工具', value: 12, prefix: '', suffix: '+' },
   { label: '程式練習時數', value: 500, prefix: '', suffix: '+' },
   { label: '解決問題的熱忱', value: 100, prefix: '', suffix: '%' }
 ])
 
 const displayStats = ref([
-  { value: 0 },
   { value: 0 },
   { value: 0 },
   { value: 0 }
@@ -84,7 +82,7 @@ onUnmounted(() => {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   text-align: center;
 }
@@ -110,8 +108,8 @@ onUnmounted(() => {
 
 @media (max-width: 900px) {
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 }
 
