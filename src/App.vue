@@ -1,6 +1,9 @@
 <script setup>
 import HeroArea from './components/HeroArea.vue'
+import TechMarquee from './components/TechMarquee.vue'
 import AboutSection from './components/AboutSection.vue'
+import ServicesSection from './components/ServicesSection.vue'
+import StatsSection from './components/StatsSection.vue'
 import ProjectGallery from './components/ProjectGallery.vue'
 import ExperienceTimeline from './components/ExperienceTimeline.vue'
 import ResumeSection from './components/ResumeSection.vue'
@@ -24,7 +27,10 @@ import ContactSection from './components/ContactSection.vue'
     </header>
 
     <HeroArea />
+    <TechMarquee />
     <AboutSection />
+    <ServicesSection />
+    <StatsSection />
     <ProjectGallery />
     <ExperienceTimeline />
     <ResumeSection />
