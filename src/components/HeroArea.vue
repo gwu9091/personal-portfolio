@@ -20,7 +20,7 @@ onMounted(() => {
         <span class="pulse-dot"></span> 尋找正職機會中
       </div>
       <h1 class="title">
-        哈囉！我是一名 <span class="text-gradient">熱血開發者</span><br/>
+        哈囉！我是一名 <span class="text-gradient animated-gradient">熱血開發者</span><br/>
         準備好學習與貢獻
       </h1>
       <p class="subtitle">
@@ -34,19 +34,21 @@ onMounted(() => {
     </div>
     
     <!-- Decorative 3D element placeholder or code snippet illustration -->
-    <div class="hero-visual glass-panel" :class="{ 'slide-up': isVisible }">
-      <div class="code-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-      </div>
-      <pre><code><span class="keyword">const</span> developer <span class="operator">=</span> {
+    <div class="hero-visual-wrapper floating-element">
+      <div class="hero-visual glass-panel" :class="{ 'slide-up': isVisible }">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <pre><code><span class="keyword">const</span> developer <span class="operator">=</span> {
   name: <span class="string">'冠忠'</span>,
   skills: [<span class="string">'Vue 3'</span>, <span class="string">'Laravel'</span>, <span class="string">'AI Tools'</span>],
   status: <span class="string">'隨時準備上工！'</span>
 };
 
 developer.startJourney(); <span class="comment">// 讓我們一起創造驚豔的作品！</span></code></pre>
+      </div>
     </div>
   </section>
 </template>
@@ -76,6 +78,7 @@ developer.startJourney(); <span class="comment">// 讓我們一起創造驚豔�
   background: rgba(139, 92, 246, 0.4);
   top: 10%;
   left: -100px;
+  animation: floatOrb1 15s ease-in-out infinite;
 }
 
 .orb-2 {
@@ -84,6 +87,26 @@ developer.startJourney(); <span class="comment">// 讓我們一起創造驚豔�
   background: rgba(59, 130, 246, 0.4);
   bottom: 20%;
   right: -50px;
+  animation: floatOrb2 12s ease-in-out infinite;
+}
+
+@keyframes floatOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, 30px) scale(1.1); }
+}
+
+@keyframes floatOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -50px) scale(0.9); }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 .hero-content {
@@ -129,6 +152,15 @@ developer.startJourney(); <span class="comment">// 讓我們一起創造驚豔�
   font-size: 4rem;
   letter-spacing: -1.5px;
   margin-bottom: 1.5rem;
+}
+
+.animated-gradient {
+  background-size: 200% auto;
+  animation: gradient-shift 4s linear infinite;
+}
+
+@keyframes gradient-shift {
+  to { background-position: 200% center; }
 }
 
 .subtitle {
