@@ -8,7 +8,7 @@
         <h2 class="title">聯絡 <span class="text-gradient">我</span></h2>
         <p class="subtitle">
           對我有興趣，或是單純想打個招呼嗎？歡迎透過表單或直接寄信到<br>
-          <a href="mailto:gwu9091@gmail.com" class="text-gradient" style="font-weight: 600; display: inline-block; margin-top: 0.5rem;">gwu9091@gmail.com</a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gwu9091@gmail.com" target="_blank" class="text-gradient" style="font-weight: 600; display: inline-block; margin-top: 0.5rem;">gwu9091@gmail.com</a>
         </p>
         
         <div class="social-links">

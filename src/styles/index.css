@@ -29,7 +29,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior 改由 JS 客製化控制 (App.vue) */
 }
 
 body {
