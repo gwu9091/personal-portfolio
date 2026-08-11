@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const stats = ref([
-  { label: '全端專案實作', value: 3, prefix: '', suffix: '+' },
+  { label: '練習與實作', value: 5, prefix: '', suffix: '+' },
   { label: '掌握技術與工具', value: 12, prefix: '', suffix: '+' },
   { label: '程式練習時數', value: 500, prefix: '', suffix: '+' },
   { label: '解決問題的熱忱', value: 100, prefix: '', suffix: '%' }
