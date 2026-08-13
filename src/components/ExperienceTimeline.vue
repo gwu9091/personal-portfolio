@@ -162,10 +162,10 @@ const experiences = ref([
 }
 
 .company {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  color: var(--accent-color);
+  font-size: 1rem;
   margin-bottom: 1rem;
+  font-weight: 500;
 }
 
 .description {
@@ -173,12 +173,11 @@ const experiences = ref([
   line-height: 1.6;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .timeline::after {
     left: 20px;
+    margin-left: 0;
   }
-  
   .timeline-item {
     width: 100%;
     padding-left: 60px;

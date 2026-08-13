@@ -2,12 +2,53 @@
 import { onMounted, ref } from 'vue'
 
 const isVisible = ref(false)
+const cardRef = ref(null)
+const isHovered = ref(false)
+const isLeaving = ref(false)
 
 onMounted(() => {
   setTimeout(() => {
     isVisible.value = true
   }, 100)
 })
+
+const handleMouseMove = (e) => {
+  if (!cardRef.value) return
+  isHovered.value = true
+  isLeaving.value = false
+  
+  const card = cardRef.value
+  const rect = card.getBoundingClientRect()
+  
+  // 計算游標相對於卡片左上角的 X, Y
+  const x = e.clientX - rect.left
+  const y = e.clientY - rect.top
+  
+  // 計算旋轉角度 (限制在正負 5 度以內，比較自然)
+  const centerX = rect.width / 2
+  const centerY = rect.height / 2
+  const rotateX = ((y - centerY) / centerY) * -5
+  const rotateY = ((x - centerX) / centerX) * 5
+  
+  // 套用變形與 CSS 變數供光暈使用
+  card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+  card.style.setProperty('--mouse-x', `${x}px`)
+  card.style.setProperty('--mouse-y', `${y}px`)
+}
+
+const handleMouseLeave = () => {
+  if (!cardRef.value) return
+  isHovered.value = false
+  isLeaving.value = true
+  
+  const card = cardRef.value
+  // 重置回原狀
+  card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg)`
+  
+  setTimeout(() => {
+    isLeaving.value = false
+  }, 600)
+}
 </script>
 
 <template>
@@ -16,7 +57,17 @@ onMounted(() => {
     <div class="ambient-light light-2"></div>
 
     <div class="hero-card-wrapper container">
-      <div class="hero-card" :class="{ 'reveal': isVisible }">
+      <div 
+        ref="cardRef"
+        class="hero-card" 
+        :class="{ 
+          'reveal': isVisible, 
+          'is-hovered': isHovered, 
+          'is-leaving': isLeaving 
+        }"
+        @mousemove="handleMouseMove"
+        @mouseleave="handleMouseLeave"
+      >
         
         <!-- 左側：個人資訊區 (對應 Wix 範本的磚紅區塊) -->
         <div class="card-left">
@@ -128,15 +179,78 @@ onMounted(() => {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
   
+  transform: translateY(50px);
   opacity: 0;
-  transform: translateY(40px);
   transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+/* 隨著游標移動時的發光效果 (內部光暈) */
+.hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.15),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+  mix-blend-mode: overlay;
+}
+
+/* 隨著游標移動時的邊框追蹤發光效果 (動態邊框) */
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* 邊框寬度 */
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.8),
+    transparent 40%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 101;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-card.is-hovered::after,
+  .hero-card.is-hovered::before {
+    opacity: 1;
+  }
 }
 
 .hero-card.reveal {
+  transform: perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0);
   opacity: 1;
-  transform: translateY(0);
+}
+
+/* 滑鼠進入後，將 transition 縮短以即時跟隨游標 */
+@media (hover: hover) and (pointer: fine) {
+  .hero-card.is-hovered {
+    transition: transform 0.1s ease-out;
+  }
+}
+
+/* 滑鼠離開時，緩慢彈回原位 */
+.hero-card.is-leaving {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* 左側區塊 */

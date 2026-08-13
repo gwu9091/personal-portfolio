@@ -29,6 +29,16 @@
 }
 
 html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Scale down typography and rem units on mobile */
+  }
+}
+
+html {
   /* scroll-behavior 改由 JS 客製化控制 (App.vue) */
 }
 
