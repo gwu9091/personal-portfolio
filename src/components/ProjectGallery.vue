@@ -12,19 +12,19 @@ const projects = ref([
   },
   {
     id: 2,
-    title: '賽博龐克風格作品集',
-    description: '利用進階動畫與 3D 網頁技術打造的充滿霓虹風格創意作品集。',
-    tags: ['JavaScript', 'Three.js', 'SCSS'],
-    image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop',
-    link: '#'
+    title: '個人 GitHub 開源庫',
+    description: '我的個人 GitHub 倉庫，收錄了所有專案原始碼、Side Projects 與技術練習，展現我對於程式開發架構與持續學習的熱忱。',
+    tags: ['GitHub', 'Git', 'Open Source'],
+    image: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=600&auto=format&fit=crop',
+    link: 'https://github.com/gwu9091'
   },
   {
     id: 3,
-    title: 'TaskFlow 任務管理工具',
-    description: '設計精美的看板應用程式，支援拖曳操作及離線同步功能。',
-    tags: ['Vue 3', 'Pinia', 'PWA'],
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=600&auto=format&fit=crop',
-    link: '#'
+    title: '個人專屬作品集網站',
+    description: '也就是您現在正在瀏覽的網站！完全使用 Vue 3 打造，不依賴龐大的 UI 框架。實作了 3D 視差傾斜、游標光暈追蹤、電影級平滑滾動等進階 CSS/JS 互動特效，展現我對前端細節的極致追求。',
+    tags: ['Vue 3', 'Vanilla CSS', 'UI/UX 動畫'],
+    image: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=600&auto=format&fit=crop',
+    link: 'https://github.com/gwu9091/personal-portfolio'
   }
 ])
 </script>

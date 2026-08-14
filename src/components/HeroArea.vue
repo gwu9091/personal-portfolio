@@ -72,8 +72,7 @@ const handleMouseLeave = () => {
         <!-- 左側：個人資訊區 (對應 Wix 範本的磚紅區塊) -->
         <div class="card-left">
           <div class="avatar-container">
-            <!-- 稍後換成你的照片 -->
-            <img src="https://ui-avatars.com/api/?name=冠忠&background=8b5cf6&color=fff&size=250" alt="吳冠忠" class="avatar-img" />
+            <img src="/img/大頭貼.jpg" alt="大頭貼" class="avatar-img" />
           </div>
           <h2 class="name-text">吳冠忠</h2>
           <div class="role-badge">全端開發者</div>
